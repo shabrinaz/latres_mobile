@@ -4,12 +4,15 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'controllers/favorite_controller.dart';
 import 'controllers/home_controller.dart';
 import 'controllers/login_controller.dart';
+import 'controllers/register_controller.dart'; // Import controller baru
 import 'services/notification_service.dart';
 import 'services/auth_service.dart';
 import 'models/amiibo_model.dart';
+import 'models/user_model.dart'; // Import model baru
 import 'main_wrapper.dart';
 import 'views/detail_screen.dart';
 import 'views/login_screen.dart';
+import 'views/register_screen.dart'; // Import view baru
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +20,7 @@ void main() async {
   // 1. Inisialisasi Hive dan Adapter
   await Hive.initFlutter();
   Hive.registerAdapter(AmiiboModelAdapter()); 
+  Hive.registerAdapter(UserModelAdapter()); // Daftarkan adapter baru
   
   // 2. Inisialisasi Services
   Get.put(NotificationService()).initialize();
@@ -30,7 +34,8 @@ void main() async {
   Get.put(HomeController());
   Get.put(FavoriteController());
   Get.put(LoginController());
-
+  Get.put(RegisterController()); // Inisialisasi RegisterController
+  
   runApp(AmiiboApp(initialRoute: isLoggedIn ? '/' : '/login'));
 }
 
@@ -54,6 +59,7 @@ class AmiiboApp extends StatelessWidget {
       initialRoute: initialRoute, 
       getPages: [
         GetPage(name: '/login', page: () => const LoginScreen()),
+        GetPage(name: '/register', page: () => const RegisterScreen()), // Tambahkan rute register
         GetPage(name: '/', page: () => const MainWrapper()),
         GetPage(name: '/detail', page: () => const DetailScreen()),
       ],

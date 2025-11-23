@@ -51,9 +51,18 @@ class LoginScreen extends GetView<LoginController> {
                   ? const CircularProgressIndicator(color: Colors.white)
                   : const Text('LOGIN', style: TextStyle(fontSize: 18)),
             )),
+            
+            const SizedBox(height: 16), // Tambahkan spasi
+            // --- BAGIAN INI UNTUK NAVIGASI KE REGISTER ---
+            TextButton(
+              onPressed: () => Get.toNamed('/register'),
+              child: const Text('Belum punya akun? Daftar di sini.'),
+            ),
+            // ---------------------------------------------
+            
             const SizedBox(height: 8),
             const Text(
-              'Gunakan username dan password apapun (simulasi).',
+              'Gunakan username dan password yang terdaftar.',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey, fontSize: 12),
             ),
