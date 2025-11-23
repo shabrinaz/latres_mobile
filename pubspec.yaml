@@ -12,7 +12,7 @@ dependencies:
   # State Management (GetX)
   get: ^4.6.6
   # HTTP Request
-  dio: ^5.0.0
+  http: ^1.2.1
   # Database Lokal (Hive)
   hive: ^2.2.3
   hive_flutter: ^1.1.0
