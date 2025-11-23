@@ -51,7 +51,7 @@ class AmiiboApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(
           centerTitle: true,
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Color.fromARGB(255, 210, 157, 231),
           foregroundColor: Colors.white,
         ),
         useMaterial3: true,

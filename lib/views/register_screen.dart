@@ -60,7 +60,7 @@ class RegisterScreen extends GetView<RegisterController> {
               onPressed: controller.isLoading.value ? null : controller.handleRegister,
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 213, 162, 218),
                 foregroundColor: Colors.white,
               ),
               child: controller.isLoading.value 

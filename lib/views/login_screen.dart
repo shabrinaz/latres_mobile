@@ -8,7 +8,7 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Amiibo App Login')),
+      appBar: AppBar(title: const Text('')),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -44,7 +44,7 @@ class LoginScreen extends GetView<LoginController> {
               onPressed: controller.isLoading.value ? null : controller.handleLogin,
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                backgroundColor: Colors.blueAccent,
+                backgroundColor: const Color.fromARGB(255, 213, 162, 218),
                 foregroundColor: Colors.white,
               ),
               child: controller.isLoading.value 
@@ -61,11 +61,6 @@ class LoginScreen extends GetView<LoginController> {
             // ---------------------------------------------
             
             const SizedBox(height: 8),
-            const Text(
-              'Gunakan username dan password yang terdaftar.',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
           ],
         ),
       ),
