@@ -32,12 +32,12 @@ class LoginController extends GetxController {
         usernameTextController.text,
         passwordTextController.text,
       );
-      // Jika berhasil, redirect ke MainWrapper
+
       Get.offAllNamed('/'); 
     } catch (e) {
       Get.snackbar(
-        'Login Failed',
-        'Please check your credentials.',
+        'login gagal',
+        'Cek kredensial kembali',
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );

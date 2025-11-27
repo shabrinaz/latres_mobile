@@ -34,15 +34,14 @@ class FavoriteController extends GetxController with StateMixin<List<AmiiboModel
     await _dbService.removeFromFavorites(amiibo);
     fetchFavorites(); 
 
-    // Tampilkan Snackbar
     Get.snackbar(
       '',
-      '${amiibo.name} removed from favorites',
+      '${amiibo.name} dihapus dari favorit',
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: Colors.black54,
       colorText: Colors.white,
       duration: const Duration(seconds: 2),
-      messageText: Text('${amiibo.name} removed from favorites', style: const TextStyle(color: Colors.white)),
+      messageText: Text('${amiibo.name} dihapus dari favorit', style: const TextStyle(color: Colors.white)),
       titleText: Container(), 
     );
     

@@ -7,8 +7,6 @@ class RegisterScreen extends GetView<RegisterController> {
 
   @override
   Widget build(BuildContext context) {
-    // Pastikan controller sudah terdaftar di main, tapi kita tambahkan di sini juga
-    // untuk memastikan binding.
     if (!Get.isRegistered<RegisterController>()) {
       Get.put(RegisterController());
     }

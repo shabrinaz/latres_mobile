@@ -35,7 +35,7 @@ class NotificationService {
     await flutterLocalNotificationsPlugin.show(
       0, 
       'Favorit Ditambahkan!',
-      '${amiiboName} berhasil ditambahkan ke daftar Favorit Anda.',
+      '${amiiboName} berhasil ditambahkan ke daftar favorit.',
       platformChannelSpecifics,
       payload: 'item_favorited',
     );

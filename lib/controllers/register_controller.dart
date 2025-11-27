@@ -25,12 +25,12 @@ class RegisterController extends GetxController {
     final confirmPassword = confirmPasswordTextController.text;
 
     if (username.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
-      Get.snackbar('Registration Failed', 'Semua kolom harus diisi.', backgroundColor: Colors.red, colorText: Colors.white);
+      Get.snackbar('Registrasi gagal', 'Semua kolom harus diisi.', backgroundColor: Colors.red, colorText: Colors.white);
       return;
     }
 
     if (password != confirmPassword) {
-      Get.snackbar('Registration Failed', 'Konfirmasi password tidak cocok.', backgroundColor: Colors.red, colorText: Colors.white);
+      Get.snackbar('Registrasi gagal', 'Konfirmasi password tidak cocok.', backgroundColor: Colors.red, colorText: Colors.white);
       return;
     }
     
@@ -39,17 +39,16 @@ class RegisterController extends GetxController {
       await _authService.register(username, password);
       
       Get.snackbar(
-        'Registration Success', 
+        'Registrasi berhasil', 
         'Pendaftaran berhasil! Silakan login.', 
         backgroundColor: Colors.green, 
         colorText: Colors.white
       );
       
-      // Redirect ke login setelah pendaftaran berhasil
       Get.offAllNamed('/login'); 
     } catch (e) {
       Get.snackbar(
-        'Registration Failed',
+        'Registrasi gagal',
         e.toString().replaceAll('Exception: ', ''),
         backgroundColor: Colors.red,
         colorText: Colors.white,

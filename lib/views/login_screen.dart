@@ -52,13 +52,11 @@ class LoginScreen extends GetView<LoginController> {
                   : const Text('LOGIN', style: TextStyle(fontSize: 18)),
             )),
             
-            const SizedBox(height: 16), // Tambahkan spasi
-            // --- BAGIAN INI UNTUK NAVIGASI KE REGISTER ---
+            const SizedBox(height: 16), 
             TextButton(
               onPressed: () => Get.toNamed('/register'),
               child: const Text('Belum punya akun? Daftar di sini.'),
             ),
-            // ---------------------------------------------
             
             const SizedBox(height: 8),
           ],

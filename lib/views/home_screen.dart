@@ -13,7 +13,6 @@ class HomeScreen extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text('Nitendo Amiibo List'),
         actions: [
-          // Tombol Logout
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: controller.handleLogout,

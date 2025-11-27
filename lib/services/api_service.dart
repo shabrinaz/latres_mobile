@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import '../models/amiibo_model.dart';
 
 class ApiService {
-  // Hapus inisialisasi Dio
   final String _baseUrl = 'https://www.amiiboapi.com/api/amiibo';
 
   Future<List<AmiiboModel>> getAllAmiibo() async {
@@ -19,12 +18,10 @@ class ApiService {
             .toList();
       }
       
-      // Jika status code bukan 200
       return [];
     } catch (e) {
       print('API Error: $e');
-      // Melemparkan exception dengan pesan yang jelas
-      throw Exception('Failed to load Amiibo data: ${e.toString()}'); 
+      throw Exception('Gagal mengambil data : ${e.toString()}'); 
     }
   }
 }
